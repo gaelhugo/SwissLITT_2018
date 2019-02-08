@@ -1,4 +1,9 @@
 'use strict';
+/*
+
+  ATTENTION A CHANGER L'année ACTIVE !
+
+*/
 class Word {
   constructor(string, scope, state) {
     this.container = document.createElement('div');
@@ -9,11 +14,11 @@ class Word {
     this.container.innerHTML = string;
     this.scope = scope;
     this.scope.container.appendChild(this.container);
-    if (string == '2018') {
+    if (string == GLOBAL_YEAR) {
       this.container.classList.add('beforeyear');
     }
     this.width = Math.ceil(this.container.getBoundingClientRect().width);
-    if (string == '2018') {
+    if (string == GLOBAL_YEAR) {
       this.container.classList.add('year');
     }
     this.speed = 1;

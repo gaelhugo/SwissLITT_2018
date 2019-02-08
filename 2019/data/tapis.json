@@ -2,43 +2,41 @@
   [
     "Schweizer",
     "Literaturpreise",
-    "2018",
+    "2019",
     "Prix&nbsp;suisses",
     "de&nbsp;littérature",
-    "2018",
+    "2019",
     "Premi&nbsp;svizzeri",
     "di&nbsp;letteratura",
-    "2018",
+    "2019",
     "Premis&nbsp;svizzers",
     "da&nbsp;litteratura",
-    "2018"
+    "2019"
   ],
   [
     "Preisträgerinnen&nbsp;und&nbsp;Preisträger",
-    "2018",
+    "2019",
     "Lauréates&nbsp;et&nbsp;lauréats",
-    "2018",
+    "2019",
     "Vincitrici&nbsp;e&nbsp;vincitori",
-    "2018",
+    "2019",
     "Victuras&nbsp;e&nbsp;victurs",
-    "2018"
+    "2019"
+  ],
+  ["Elisa&nbsp;Shua&nbsp;","Dusapin&nbsp;", "Les&nbsp;Billes&nbsp;du&nbsp;Pachinko&nbsp;",
+    "Alexandre&nbsp;","Hmine&nbsp;", "La&nbsp;chiave&nbsp;nel&nbsp;latte&nbsp;", "Julia&nbsp;",
+    "von&nbsp;Lucadou&nbsp;", "Die&nbsp;Hochhausspringerin&nbsp;", "Anna&nbsp;","Ruchat&nbsp;",
+    "Gli&nbsp;anni&nbsp;di&nbsp;Nettuno&nbsp;sulla&nbsp;terra&nbsp;", "Patrick&nbsp;","Savolainen&nbsp;",
+     "Farantheiner&nbsp;", "José&#8209;Flore&nbsp;","Tappy&nbsp;", "Trás&#8209;os&#8209;Montes&nbsp;", "Christina&nbsp;","Viragh&nbsp;",
+     "Eine&nbsp;dieser&nbsp;Nächte&nbsp;"],
+  [
+    "Spezialpreis&nbsp;", "Vermittlung&nbsp;",
+    "Prix&nbsp;", "spécial&nbsp;", "de&nbsp;" ,"médiation&nbsp;",
+    "Premio&nbsp;" ,"speciale&nbsp;", "di&nbsp;", "mediazione&nbsp;",
+     "Premi&nbsp;", "spezial&nbsp;" ,"d’intermediaziun&nbsp;"
   ],
   [
-    "Fabiano&nbsp;", "Alborghetti&nbsp;", "Maiser&nbsp;", "Dumenic&nbsp;", "Andry&nbsp;",
-     "Sablun&nbsp;", "Michael&nbsp;" ,"Fehr&nbsp;", "Glanz&nbsp;und&nbsp;" ,
-     "Schatten&nbsp;", "Baptiste&nbsp;", "Gaillard&nbsp;", "Un&nbsp;domaine&nbsp;",
-      "des&nbsp;corpuscules&nbsp;", "Yael&nbsp;", "Inokai&nbsp;", "Mahlstrom&nbsp;",
-       "Friederike&nbsp;", "Kretzen&nbsp;", "Schule&nbsp;der&nbsp;", "Indienfahrer&nbsp;",
-        "Jérôme&nbsp;", "Meizoz&nbsp;", "Faire&nbsp;", "le&nbsp;garçon&nbsp;"
-  ],
-  [
-    "Spezialpreis&nbsp;", "Übersetzung&nbsp;",
-    "Prix&nbsp;", "spécial&nbsp;", "de&nbsp;" ,"traduction&nbsp;",
-    "Premio&nbsp;" ,"speciale&nbsp;", "di&nbsp;", "traduzione&nbsp;",
-     "Premi&nbsp;", "spezial&nbsp;", "da&nbsp;" ,"translaziun&nbsp;"
-  ],
-  [
-    "Yla&nbsp;Margrit", "von&nbsp;Dach"
+    "Centre&nbsp;","de&nbsp;traduction&nbsp;","littéraire&nbsp;","de&nbsp;Lausanne&nbsp;","(CTL)&nbsp;","Übersetzerhaus&nbsp;","Looren&nbsp;"
   ],
   [
     "Schweizer&nbsp;", "Grand&nbsp;", "Prix&nbsp;", "Literatur&nbsp;",
@@ -47,7 +45,7 @@
     "Grond&nbsp;", "premi&nbsp;", "svizzer&nbsp;", "da&nbsp;", "litteratura&nbsp;"
   ],
   [
-    "Anna&nbsp;" ,"Felder&nbsp;"
+    "Zsuzsanna&nbsp;" ,"Gahse&nbsp;"
   ]
 ]
 }

@@ -16,6 +16,8 @@
   add image slideshow
 */
 
+const GLOBAL_YEAR = '2019';
+
 class ScrollApp {
   constructor() {
     // this.positionGoals = [
@@ -61,11 +63,19 @@ class ScrollApp {
     this.allLines = [];
     this.slideshowIsBlocked = false;
     this.singleton = null;
+    this.isRunning = true;
     this.initListeners();
     // this.init();
     fetch('data/tapis.json').then((r) => r.json()).then((json) => {
       this.titles = json.tapis;
       // this.titles_copy = json.tapis;
+      this.loadSpeed();
+    });
+  }
+
+  loadSpeed() {
+    fetch('data/speed.json').then((data) => data.json()).then((json) => {
+      this.orientation = json;
       this.loadWinners();
     });
   }
@@ -142,8 +152,11 @@ class ScrollApp {
           console.log('blocked', this.singleton);
           let elems = this.slideshowWrapper.children;
           elems.item(this.singleton - 1).classList.add('dark');
-          this.slideshowWrapper.style.left =
-              this.goal - 2 * elems.item(this.singleton - 1).width;
+          // this.slideshowWrapper.style.left =
+          //     this.goal - 2 * elems.item(this.singleton - 1).width;
+          this.slideshowWrapper.style.transform = 'translateX(' +
+              (this.goal - 2 * elems.item(this.singleton - 1).width) + 'px)';
+          console.log(this.goal - 2 * elems.item(this.singleton - 1).width);
           this.slideshowIsBlocked = false;
         } else {
           // launch slideshow
@@ -224,7 +237,8 @@ class ScrollApp {
       }
       elem.classList.remove('dark');
       this.goal -= elem.width;
-      this.slideshowWrapper.style.left = this.goal;
+      // this.slideshowWrapper.style.left = this.goal;
+      this.slideshowWrapper.style.transform = 'translateX(' + this.goal + 'px)';
     }
 
     if (this.slideshow_index < this.slideshowWrapper.children.length) {
@@ -235,10 +249,12 @@ class ScrollApp {
       console.log('now is ok');
       this.slideshowIsBlocked = true;
       this.singleton = this.slideshow_index;
-    } else {
+    } else if (elems.item(this.slideshow_index - 1)) {
       elems.item(this.slideshow_index - 1).classList.add('dark');
-      this.slideshowWrapper.style.left =
-          this.goal - 2 * elems.item(this.slideshow_index - 1).width;
+      // this.slideshowWrapper.style.left =
+      //     this.goal - 2 * elems.item(this.slideshow_index - 1).width;
+      this.slideshowWrapper.style.transform = 'translateX(' +
+          (this.goal - 2 * elems.item(this.slideshow_index - 1).width) + 'px)';
     }
     this.slideshow_index++;
   }
@@ -246,7 +262,8 @@ class ScrollApp {
   getCredits(id) {
     this.slideshowWrapper.innerHTML = '';
     this.slideshowWrapper.classList.add('notransition');
-    this.slideshowWrapper.style.left = null;
+    // this.slideshowWrapper.style.left = null;
+    this.slideshowWrapper.style.transform = 'translateX(calc(240% - 0px))';
     if (!this.slideshowWrapper.classList.contains('start')) {
       this.slideshowWrapper.classList.add('start');
     }
@@ -266,7 +283,8 @@ class ScrollApp {
   getWinner(id) {
     this.slideshowWrapper.innerHTML = '';
     this.slideshowWrapper.classList.add('notransition');
-    this.slideshowWrapper.style.left = null;
+    // this.slideshowWrapper.style.left = null;
+    this.slideshowWrapper.style.transform = 'translateX(calc(40% - 0px))';
     if (!this.slideshowWrapper.classList.contains('start')) {
       this.slideshowWrapper.classList.add('start');
     }
@@ -335,7 +353,7 @@ class ScrollApp {
     let _height = 0;
     let counter = 0;
     while (_height < 480) {
-      let line = new Line(counter, this);
+      let line = new Line(counter, this, this.orientation.speed[0][counter]);
       this.allLines.push(line);
       _height += 30;
       counter++;
@@ -347,7 +365,7 @@ class ScrollApp {
     for (let i = 0; i < this.allLines.length; i++) {
       this.allLines[i].update();
     }
-    requestAnimationFrame(this.draw.bind(this));
+    if (this.isRunning) requestAnimationFrame(this.draw.bind(this));
   }
 
   transitionEndEventName() {
@@ -368,8 +386,20 @@ class ScrollApp {
 
     // TODO: throw 'TransitionEnd event is not supported in this browser';
   }
+  toggle() {
+    this.isRunning = !this.isRunning;
+    this.draw();
+  }
+  getSpeeds() {
+    console.log('------ new speed by line:');
+    const speeds = [];
+    for (const line of this.allLines) {
+      speeds.push(line.speed);
+    }
+    console.log(speeds);
+  }
 }
-
+let app;
 window.onload = function() {
-  new ScrollApp();
+  app = new ScrollApp();
 };

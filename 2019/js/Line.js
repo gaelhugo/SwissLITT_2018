@@ -1,6 +1,6 @@
 'use strict';
 class Line {
-  constructor(id, scope) {
+  constructor(id, scope, speed) {
     this.titles = scope.titles.slice();
     this.titles_copy = scope.titles.slice();
     // console.log(this.titles_copy);
@@ -44,7 +44,9 @@ class Line {
     this.container = document.createElement('div');
     this.container.classList.add('wrapper');
     document.body.appendChild(this.container);
-    this.speed = ((0.2 + Math.random()) * (Math.random() < 0.5 ? -1 : 1)) * .5;
+    this.speed = (speed) ?
+        speed :
+        ((0.2 + Math.random()) * (Math.random() < 0.5 ? -1 : 1)) * .5;
     this.originalSpeed = this.speed;
     this.end = 0;
     this.start = 0;
@@ -332,7 +334,7 @@ class Line {
         this.goal = null;
         this.lookForPosition = false;
         this.lookForKeyword = '';
-        let s = (this.speed <= 0) ? -10 : 10;
+        let s = (this.speed <= 0) ? -50 : 50;
         this.updateSpeed(s);
         this.lookup = goal;
       }

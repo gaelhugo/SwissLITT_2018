@@ -27,7 +27,7 @@ body{
   height:100%;
   width:100%;
   overflow: hidden;
-  background-color: #ffed00;/*#ffde14;*/
+  background-color: #ff7f40;/*#ffed00;/*#ffde14;*/
   -webkit-transition: background-color 0.5s; /* Safari */
   transition: background-color 0.5s;
 }
@@ -121,11 +121,15 @@ body.black{
   max-height:100%;
   width:auto;
   /* left:calc(100% - 0px); */
-  -webkit-transition: left 2s ease-out; /* Safari */
-  transition: left 2s ease-out;
+  /* -webkit-transition: left 2s ease-out;
+  transition: left 2s ease-out; */
+
+  -webkit-transition: transform 2s ease-out;
+  transition: transform 2s ease-out;
 }
 .start{
-  left:calc(100% - 0px);
+  /* left:calc(100% - 0px); */
+  transform:translateX(calc(40% - 0px));
 }
 .notransition {
   -webkit-transition: none !important;
